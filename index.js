@@ -36,11 +36,11 @@ app.use(
 );
 
 app.use(
-    "/listItems",
+    "/questions",
     expressJwt({
         secret: process.env.JWT_SECRET
     }),
-    require("./controllers/listItems")
+    require("./controllers/questions")
 );
 
 //Catch-All route

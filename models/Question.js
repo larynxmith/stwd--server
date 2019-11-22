@@ -28,7 +28,7 @@ let question = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    correctAnswer: {
+    correctAttempt: {
         type: Boolean,
         default: false
     }

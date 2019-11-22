@@ -4,7 +4,7 @@ let db = require('../models')
 
 //GET all items
 router.get('/', (req, res) => {
-    db.ListItem.find({
+    db.Question.find({
         userId: req.user._id
     })
         .then(items => {
@@ -12,17 +12,17 @@ router.get('/', (req, res) => {
         })
 })
 
-//POST to /listItems
+//POST to /questions
 router.post('/', (req, res) => {
-    db.ListItem.create(req.body)
+    db.Question.create(req.body)
         .then(item => {
             res.status(201).send(item)
         })
 });
 
-//PUT to /listItems/:id
+//PUT to /questions/:id
 router.put('/:id', (req, res) => {
-    db.ListItem.findOneAndUpdate({
+    db.Question.findOneAndUpdate({
         _id: req.params.id
     },
         req.body,
@@ -38,9 +38,10 @@ router.put('/:id', (req, res) => {
         })
 });
 
-// DELETE /listItems/:id
+// DELETE /questions/:idrs
+
 router.delete("/:id", (req, res) => {
-    db.ListItem.findByIdAndDelete(req.params.id)
+    db.Question.findByIdAndDelete(req.params.id)
         .then(() => {
             res.status(204).send();
         })

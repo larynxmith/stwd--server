@@ -9,4 +9,4 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/swtd', {
 
 
 module.exports.User = require('./User')
-module.exports.ListItem = require('./Questions')
+module.exports.Question = require('./Question')
