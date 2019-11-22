@@ -4,11 +4,9 @@ let db = require('../models')
 
 //GET all items
 router.get('/', (req, res) => {
-    db.Question.find({
-        userId: req.user._id
-    })
+    db.Question.find()
         .then(items => {
-            res.status(201).send(items)
+            res.status(200).send(items)
         })
 })
 
